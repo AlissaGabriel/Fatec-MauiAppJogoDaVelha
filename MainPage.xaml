@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppJogoDaVelha.MainPage">
+
+	<ContentPage.Background>
+		<LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+            <GradientStop Color="#7ACFA6" Offset="0.3"/>
+            <GradientStop Color="#AED9A3" Offset="1.1"/>
+		</LinearGradientBrush>
+	</ContentPage.Background>
+
+	<ContentPage.Resources>
+        <Style TargetType="Button" x:Key="TabuleiroButton">
+            <Setter Property="BackgroundColor" Value="#7ACFA6"/>
+			<Setter Property="CornerRadius" Value="20"/>
+			<Setter Property="TextColor" Value="White"/>
+			<Setter Property="FontSize" Value="72"/>
+			<Setter Property="BorderColor" Value="White"/>
+            <Setter Property="BorderWidth" Value="2"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="ResetButton">
+            <Setter Property="BackgroundColor" Value="#5FA77F"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="CornerRadius" Value="15"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="15,10"/>
+        </Style>
+        
+        <Style TargetType="Label" x:Key="TituloLabel">
+			<Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="0,20,0,20"/>
+		</Style>
+        
+        <Style TargetType="Label" x:Key="InfoLabel">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+	<ContentPage.Content>
+		<Grid RowDefinitions="*, *, *, *, *, *" ColumnDefinitions="*, *, *" ColumnSpacing="5" RowSpacing="5" Margin="5">
+            <Label Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Text="Jogo da Velha" Style="{StaticResource TituloLabel}"/>
+
+            <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+            <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+            <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+
+            <Button x:Name="btn20" Grid.Row="2" Grid.Column="0" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+            <Button x:Name="btn21" Grid.Row="2" Grid.Column="1" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+            <Button x:Name="btn22" Grid.Row="2" Grid.Column="2" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+
+            <Button x:Name="btn30" Grid.Row="3" Grid.Column="0" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+            <Button x:Name="btn31" Grid.Row="3" Grid.Column="1" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+            <Button x:Name="btn32" Grid.Row="3" Grid.Column="2" Style="{StaticResource TabuleiroButton}" Clicked="Button_Clicked"/>
+
+            <Label x:Name="textoInferior" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0" Text="É a vez do jogador X" Style="{StaticResource InfoLabel}"/>
+            <Button x:Name="resetar" Grid.ColumnSpan="3" Grid.Row="5" Grid.Column="0" Text="Novo Jogo" IsVisible="False" Style="{StaticResource ResetButton}" Clicked="resetar_Clicked"/>
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>
